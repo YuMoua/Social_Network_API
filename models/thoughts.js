@@ -17,9 +17,7 @@ const thoughts = new Schema(
             type: String,
             required: true,
         },
-        reactions: {
-            comments: [theirReactions]
-        }
+        reactions: [theirReactions]
     },
     {
         toJSON: {
