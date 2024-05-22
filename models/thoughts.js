@@ -29,6 +29,6 @@ const thoughts = new Schema(
     }
 );
 function formatDate(value) {
-    return value ? value.toLocalString() : '';
+    return value ? value.toLocaleString() : '';
 }
 module.exports = thoughts;

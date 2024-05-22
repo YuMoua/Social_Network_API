@@ -1,5 +1,10 @@
 const { Schema, Types } = require('mongoose');
 
+// need to work on these possible reactions array
+const possibleReactions = [
+
+]
+
 const reactions = new Schema(
     {
         reactionId: {
@@ -30,7 +35,7 @@ const reactions = new Schema(
 );
 
 function formatDate(value) {
-    return value ? value.toLocalString() : '';
+    return value ? value.toLocaleString() : '';
 }
 
 module.exports = reactions;
