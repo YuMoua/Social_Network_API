@@ -36,9 +36,7 @@ const userSchema = new Schema(
             default: Date.now,
             get: formatDate
         },
-        reactions: {
-            comments: [theirReactions]
-        }
+        // reactions:
     },
     {
         toJSON: {
