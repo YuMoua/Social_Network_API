@@ -1,6 +1,6 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-const thoughts = new Schema(
+const thoughtsSchema = new Schema(
     {
         thoughtText: {
             type: String,
@@ -29,4 +29,7 @@ const thoughts = new Schema(
 function formatDate(value) {
     return value ? value.toLocaleString() : '';
 }
-module.exports = thoughts;
+
+const Thoughts = model('thoughts', thoughtsSchema)
+
+module.exports = Thoughts;

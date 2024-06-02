@@ -1,9 +1,9 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
-const user = new Schema(
+const userSchema = new Schema(
     {
         username: {
             type: String,
@@ -50,4 +50,8 @@ const user = new Schema(
 function formatDate(value) {
     return value ? value.toLocalString() : '';
 }
-module.exports = user;
+
+const Users = model('users', userSchema);
+
+
+module.exports = Users;
