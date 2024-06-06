@@ -9,7 +9,7 @@ const userSchema = new Schema(
             type: String,
             unique: true,
             required: true,
-            trimmed: true,
+            trim: true,
         },
         email: {
             type: String,
@@ -23,14 +23,20 @@ const userSchema = new Schema(
             }
         },
         // Need to add thoughts array with _id referencing the Thought Model
-        thoughts: {
-
-        },
+        thoughts: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Thought' // Reference to Thought model
+            }
+        ],
         // Need to add friends array with _id referencing the User Model
 
-        friends: {
-
-        },
+        friends: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'User' // Reference to User model itself
+            }
+        ],
         createdAt: {
             type: Date,
             default: Date.now,

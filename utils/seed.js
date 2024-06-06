@@ -21,7 +21,7 @@ connection.once('open', async () => {
     // Create empty array to hold the students
     const users = [];
 
-    // Loop 20 times -- add students to the students array
+    // Loop 5 times -- add students to the students array
     for (let i = 0; i < 5; i++) {
         // Get some random assignment objects using a helper function that we imported from ./data
         const thoughts = getRandomthoughts(1);
