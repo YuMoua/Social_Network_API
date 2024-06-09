@@ -27,13 +27,13 @@ connection.once('open', async () => {
         const thoughts = getRandomthoughts(1);
 
         const fullName = getRandomName();
+
         const first = fullName.split(' ')[0];
         const last = fullName.split(' ')[1];
 
         users.push({
-            first,
-            last,
-            thoughts,
+            username: first,
+
         });
     }
 
@@ -47,6 +47,6 @@ connection.once('open', async () => {
 
     // Log out the seed data to indicate what should appear in the database
     console.table(users);
-    console.info('Seeding complete! 🌱');
+    console.info('Seeding complete!');
     process.exit(0);
 });

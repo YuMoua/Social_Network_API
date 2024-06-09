@@ -35,7 +35,7 @@ const reactions = new Schema(
 );
 
 function formatDate(value) {
-    return value ? value.toLocaleString() : '';
+    return value;
 }
 
 module.exports = reactions;

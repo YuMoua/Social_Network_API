@@ -29,9 +29,9 @@ const getRandomName = () =>
 const getRandomthoughts = (int) => {
     const results = [];
     for (let i = 0; i < int; i++) {
-        results.push({
-            thoughts: getRandomArrItem(thoughts)
-        });
+        // results.push({
+            // thoughts: getRandomArrItem(thoughts)
+        // });
     }
     return results;
 };

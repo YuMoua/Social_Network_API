@@ -8,12 +8,12 @@ const userSchema = new Schema(
         username: {
             type: String,
             unique: true,
-            required: true,
+            // required: true,
             trim: true,
         },
         email: {
             type: String,
-            required: true,
+            // required: true,
             unique: true,
             validate: {
                 validator: function(email) {
@@ -52,7 +52,7 @@ const userSchema = new Schema(
     }
 );
 function formatDate(value) {
-    return value ? value.toLocalString() : '';
+    return value;
 }
 
 const Users = model('users', userSchema);

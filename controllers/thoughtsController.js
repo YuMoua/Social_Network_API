@@ -5,8 +5,10 @@ module.exports = {
   async getThoughts(req, res) {
     try {
       const thought = await Thoughts.find();
-
+      
       res.json(thought);
+      console.log(thought);
+      
     } catch (err) {
       res.status(500).json(err);
     }

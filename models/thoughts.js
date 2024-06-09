@@ -4,7 +4,7 @@ const thoughtsSchema = new Schema(
     {
         thoughtText: {
             type: String,
-            required: true,
+            // required: true,
             maxlength: 280,
             minlength: 1
         },
@@ -15,7 +15,7 @@ const thoughtsSchema = new Schema(
         },
         username: {
             type: String,
-            required: true,
+            // required: true,
         },
         // reactions: [theirReactions]
     },
@@ -27,7 +27,7 @@ const thoughtsSchema = new Schema(
     }
 );
 function formatDate(value) {
-    return value ? value.toLocaleString() : '';
+    return value ;
 }
 
 const Thoughts = model('thoughts', thoughtsSchema)

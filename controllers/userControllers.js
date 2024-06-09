@@ -4,10 +4,11 @@ module.exports = {
     // Get all users
     async getUsers(req, res) {
         try {
-            const users = await Users.find().populate('users');
+            const users = await Users.find();
 
             res.json(users);
         } catch (err) {
+            console.log(err);
             res.status(500).json(err);
         }
     },
