@@ -10,6 +10,8 @@ const names = [
     'num9',
     'num0'
 ];
+
+
     
 const thoughts = [
     'IDK',

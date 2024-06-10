@@ -8,13 +8,14 @@ const userSchema = new Schema(
         username: {
             type: String,
             unique: true,
-            // required: true,
+            required: true,
             trim: true,
         },
         email: {
             type: String,
-            // required: true,
+            required: true,
             unique: true,
+            trim: true,
             validate: {
                 validator: function(email) {
                     return emailRegex.test(email);
@@ -31,12 +32,12 @@ const userSchema = new Schema(
         ],
         // Need to add friends array with _id referencing the User Model
 
-        friends: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'User' // Reference to User model itself
-            }
-        ],
+        // friends: [
+        //     {
+        //         type: Schema.Types.ObjectId,
+        //         ref: 'User' // Reference to User model itself
+        //     }
+        // ],
         createdAt: {
             type: Date,
             default: Date.now,

@@ -18,21 +18,21 @@ connection.once('open', async () => {
     }
 
 
-    // Create empty array to hold the students
+    // Create empty array to hold the users
     const users = [];
 
-    // Loop 5 times -- add students to the students array
+    // Loop 5 times -- add users to the users array
     for (let i = 0; i < 5; i++) {
         // Get some random assignment objects using a helper function that we imported from ./data
         const thoughts = getRandomthoughts(1);
 
         const fullName = getRandomName();
 
-        const first = fullName.split(' ')[0];
-        const last = fullName.split(' ')[1];
+        const userName = fullName.split(' ')[0];
 
         users.push({
-            username: first,
+            username: userName
+            email: 
 
         });
     }
