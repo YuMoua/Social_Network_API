@@ -53,6 +53,25 @@ module.exports = {
 
             await user.remove();
             res.json({ message: 'user and thoughts deleted!' });
+            console.log('User has been deleted')
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    },
+    // updates a user
+    async updateUser(req, res) {
+        try {
+            const user = await Users.findOneAndUpdate(
+                { _id: req.params.userId },
+                { $set: req.body },
+                { runValidators: true, new: true }
+            );
+
+            if (!user) {
+                res.status(404).json({ message: 'No user with this id!' });
+            }
+
+            res.json(user);
         } catch (err) {
             res.status(500).json(err);
         }
