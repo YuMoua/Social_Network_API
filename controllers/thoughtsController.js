@@ -52,11 +52,22 @@ module.exports = {
       if (!thought) {
         return res.status(404).json({ message: 'No thought with that ID' });
       }
+
+      if (thought.username) { 
+        await Users.findByIdAndUpdate(
+          thought.username,
+          { $pull: { thoughts: thought._id } }, 
+          { new: true }
+        );
+      }
+
       res.json({ message: 'Thought deleted!' });
     } catch (err) {
+      console.error("Error deleting thought:", err);
       res.status(500).json(err);
     }
-  },
+  }
+,
   // Update a thought
   async updateThought(req, res) {
     try {
