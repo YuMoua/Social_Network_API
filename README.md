@@ -12,3 +12,5 @@
   npm i
   ```
 
+Walkthrough Video Link: https://drive.google.com/file/d/1TSVBB0SJ_wn7yfOhGkWmIRg4bljSw6ej/view?usp=drive_link
+
